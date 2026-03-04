@@ -16,7 +16,7 @@
                             </a>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="/calendar/calendar" class=" waves-effect">
                                 <i class="mdi mdi-calendar-check"></i>
                                 <span>Calendar</span>
@@ -33,8 +33,22 @@
                                 <li><a href="/email/email-read">Email Read</a></li>
                                 <li><a href="/email/email-compose">Email Compose</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
 
+                        <li class="menu-title">Management</li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-package-variant"></i>
+                                <span>Catalog</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{ route('categories.index') }}">Categories</a></li>
+                                <li><a href="{{ route('subcategories.index') }}">SubCategories</a></li>
+                                <li><a href="{{ route('products.index') }}">Products</a></li>
+                            </ul>
+                        </li>
+{{-- 
                         <li class="menu-title">Components</li>
 
                         <li>
@@ -198,7 +212,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>

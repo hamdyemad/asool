@@ -22,6 +22,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/landing-api.css') }}">
 
     @yield('extra_css')
 </head>
@@ -34,6 +35,8 @@
     @include('front.components.footer')
 
     @yield('extra_js')
+    
+    @stack('scripts')
 
     <!-- AOS Animation library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

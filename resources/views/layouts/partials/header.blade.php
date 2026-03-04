@@ -6,19 +6,19 @@
                     <div class="navbar-brand-box">
                         <a href="/" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ URL::asset('/images/logo-sm.png')}}" alt="" height="22">
+                                <img src="{{ URL::asset('/front/logo.png')}}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ URL::asset('/images/logo-dark.png')}}" alt="" height="17">
+                                <img src="{{ URL::asset('/front/logo.png')}}" alt="" height="17">
                             </span>
                         </a>
 
                         <a href="/" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ URL::asset('/images/logo-sm.png')}}" alt="" height="22">
+                                <img src="{{ URL::asset('/front/logo.png')}}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ URL::asset('/images/logo-light.png')}}" alt="" height="18">
+                                <img src="{{ URL::asset('/front/logo.png')}}" alt="" height="18">
                             </span>
                         </a>
                     </div>
@@ -47,14 +47,14 @@
                 <div class="d-flex">
 
                      <!-- App Search-->
-                     <form class="app-search d-none d-lg-block">
+                     {{-- <form class="app-search d-none d-lg-block">
                         <div class="position-relative">
                             <input type="text" class="form-control" placeholder="Search...">
                             <span class="fa fa-search"></span>
                         </div>
-                    </form>
+                    </form> --}}
 
-                    <div class="dropdown d-inline-block d-lg-none ml-2">
+                    {{-- <div class="dropdown d-inline-block d-lg-none ml-2">
                         <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="mdi mdi-magnify"></i>
@@ -73,9 +73,9 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="dropdown d-none d-md-block ml-2">
+                    {{-- <div class="dropdown d-none d-md-block ml-2">
                         <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="mr-2" src="{{ URL::asset('/images/flags/us_flag.jpg')}}" alt="Header Language" height="16"> English <span class="mdi mdi-chevron-down"></span>
                         </button>
@@ -106,7 +106,7 @@
                                 <img src="{{ URL::asset('/images/flags/russia_flag.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> Russian </span>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="dropdown d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
@@ -114,7 +114,7 @@
                         </button>
                     </div>
 
-                    <div class="dropdown d-inline-block ml-1">
+                    {{-- <div class="dropdown d-inline-block ml-1">
                         <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="ti-bell"></i>
@@ -216,7 +216,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
             
 
                     <div class="dropdown d-inline-block">
@@ -228,10 +228,10 @@
                         <div class="dropdown-menu dropdown-menu-right">
                             <!-- item-->
                             <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 text-muted align-middle mr-1"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 text-muted align-middle mr-1"></i> My Wallet</a>
-                            <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a>
-                            <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 text-muted align-middle mr-1"></i> Lock screen</a>
-                            <div class="dropdown-divider"></div>
+                            {{-- <a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 text-muted align-middle mr-1"></i> My Wallet</a> --}}
+                            {{-- <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 text-muted align-middle mr-1"></i> Settings</a> --}}
+                            {{-- <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 text-muted align-middle mr-1"></i> Lock screen</a> --}}
+                            {{-- <div class="dropdown-divider"></div> --}}
                             <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-power font-size-17 text-muted align-middle mr-1 text-danger"></i> {{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

@@ -1,0 +1,119 @@
+/* Landing Page API Integration Styles */
+
+/* Categories Sidebar Pagination */
+.sidebar-pagination {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.sidebar-pagination button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 35px;
+}
+
+.sidebar-pagination button:hover {
+    background: #f5f5f5;
+    border-color: #4CAF50;
+}
+
+.sidebar-pagination button.active {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.sidebar-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading States */
+.products-grid .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.loading-spinner .spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Product Card Hover Effect */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Category Link Active State Enhancement */
+.sidebar-menu .category-link.active {
+    font-weight: bold;
+    color: #4CAF50;
+    position: relative;
+}
+
+.sidebar-menu .category-link.active::before {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 2px;
+}
+
+/* Responsive Pagination */
+@media (max-width: 768px) {
+    .sidebar-pagination button {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-width: 30px;
+    }
+}
+
+/* RTL Support */
+[dir="rtl"] .sidebar-menu .category-link.active::before {
+    right: auto;
+    left: -15px;
+}
