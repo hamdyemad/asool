@@ -29,6 +29,10 @@ Route::get('/keep-live', "LexaAdmin@live");
 // when render first time project redirect
 Route::get('/', function () {
     return view('front.landing');
+})->name('home');
+
+Route::get('/solutions', function () {
+    return view('front.solutions');
 });
 
 Route::get('/home', function () {

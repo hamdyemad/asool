@@ -1,0 +1,121 @@
+<!-- Partners Section -->
+<section class="partners-section" id="partners">
+    <div class="partners-header">
+        <span class="badge partners-badge">
+            <i class="fas fa-chart-line"></i>
+            شركاء النجاح
+        </span>
+        <p class="partners-subtitle">نفخر بثقة العديد من الجهات</p>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div class="partners-carousel-outer">
+        <button class="partners-nav-btn partners-prev" id="partnersPrev">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="partners-viewport" id="partnersViewport">
+            <div class="partners-track" id="partnersTrack">
+                @php $partnerLogos = [
+                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
+                    'section2/image 10.png',
+                    'section2/image 11.png',
+                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
+                    'section2/image 10.png',
+                    'section2/image 11.png',
+                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
+                    'section2/image 10.png',
+                ]; @endphp
+
+                @foreach($partnerLogos as $logo)
+                <div class="partner-card">
+                    <img src="{{ asset('front/' . $logo) }}" alt="شريك نجاح">
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        <button class="partners-nav-btn partners-next" id="partnersNext">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    </div>
+</section>
+
+<script>
+    // ==========================================
+    // Partners Carousel
+    // ==========================================
+    (function () {
+        const track = document.getElementById('partnersTrack');
+        const viewport = document.getElementById('partnersViewport');
+        const prevBtn = document.getElementById('partnersPrev');
+        const nextBtn = document.getElementById('partnersNext');
+        if (!track || !viewport) return;
+
+        let currentIndex = 0;
+        let autoInterval;
+
+        function getVisibleCards() {
+            const vw = viewport.offsetWidth;
+            if (vw < 480) return 1;
+            if (vw < 768) return 2;
+            if (vw < 1024) return 3;
+            return 5;
+        }
+
+        function getCardWidth() {
+            const cards = track.querySelectorAll('.partner-card');
+            if (!cards.length) return 0;
+            const gap = 24;
+            return cards[0].offsetWidth + gap;
+        }
+
+        function getTotalCards() {
+            return track.querySelectorAll('.partner-card').length;
+        }
+
+        function goTo(index) {
+            const total = getTotalCards();
+            const visible = getVisibleCards();
+            const maxIndex = total - visible;
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            const offset = currentIndex * getCardWidth();
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        prevBtn && prevBtn.addEventListener('click', () => { goTo(currentIndex - 1); resetAuto(); });
+        nextBtn && nextBtn.addEventListener('click', () => { goTo(currentIndex + 1); resetAuto(); });
+
+        let touchStartX = 0;
+        viewport.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        viewport.addEventListener('touchend', e => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? goTo(currentIndex - 1) : goTo(currentIndex + 1);
+                resetAuto();
+            }
+        }, { passive: true });
+
+        function startAuto() {
+            autoInterval = setInterval(() => {
+                const maxIndex = getTotalCards() - getVisibleCards();
+                if (currentIndex >= maxIndex) {
+                    goTo(0);
+                } else {
+                    goTo(currentIndex + 1);
+                }
+            }, 3000);
+        }
+
+        function resetAuto() {
+            clearInterval(autoInterval);
+            startAuto();
+        }
+
+        viewport.addEventListener('mouseenter', () => clearInterval(autoInterval));
+        viewport.addEventListener('mouseleave', startAuto);
+
+        startAuto();
+        window.addEventListener('resize', () => goTo(currentIndex));
+    })();
+</script>
