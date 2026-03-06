@@ -14,10 +14,11 @@
         <!-- Floating Navbar Capsule (Center) -->
         <div class="nav-capsule" id="navCapsule">
             <div class="nav-download">
-                <a href="{{ asset('/front/كتالوج أصول عربي (1).pdf') }}"><i class="fas fa-download"></i> تحميل الكتالوج بالعربى</a>
-            </div>
-            <div class="nav-download">
-                <a href="{{ asset('/front/كتالوج أصول انجليزي 01.pdf') }}"><i class="fas fa-download"></i> تحميل الكتالوج بالانجليزية</a>
+                <a href="#" onclick="return false;"><i class="fas fa-download"></i> تحميل الكتالوج <i class="fas fa-chevron-down ms-1" style="font-size: 0.8em; margin-right: 8px;"></i></a>
+                <ul class="nav-download-dropdown">
+                    <li><a href="{{ asset('/front/كتالوج أصول عربي (1).pdf') }}" target="_blank">بالعربية</a></li>
+                    <li><a href="{{ asset('/front/كتالوج أصول انجليزي 01.pdf') }}" target="_blank">بالإنجليزية</a></li>
+                </ul>
             </div>
             <ul class="nav-menu">
                 <li><a href="#contact">تواصل معنا</a></li>

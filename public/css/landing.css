@@ -91,7 +91,7 @@ body {
     border-radius: 60px;
     display: flex;
     flex-direction: row-reverse;
-    overflow: hidden;
+    overflow: visible;
     height: 60px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
@@ -103,6 +103,54 @@ body {
     align-items: center;
     transition: var(--transition);
     order: 1;
+    border-radius: 60px 0 0 60px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown Menu Styles */
+.nav-download-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 10px 0;
+    margin: 10px 0 0 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-download:hover .nav-download-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-download-dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-download-dropdown li a {
+    color: #333 !important;
+    padding: 10px 20px;
+    display: flex;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-download-dropdown li a:hover {
+    background: #f5f5f5;
+    color: var(--primary-color) !important;
 }
 
 .nav-download:hover {
