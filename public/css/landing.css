@@ -1682,34 +1682,6 @@ body {
 }
 
 /* ==========================================
-   Partners
-   ========================================== */
-.partners-section {
-    padding: 60px 10%;
-    border-top: 1px solid #eee;
-}
-
-.partners-track {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    overflow: hidden;
-}
-
-.partners-track img {
-    height: 40px;
-    filter: grayscale(1);
-    opacity: 0.5;
-    transition: var(--transition);
-}
-
-.partners-track img:hover {
-    filter: grayscale(0);
-    opacity: 1;
-}
-
-/* ==========================================
    Buttons
    ========================================== */
 .btn-primary {

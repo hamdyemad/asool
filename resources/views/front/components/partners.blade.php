@@ -32,11 +32,6 @@
                     'logo.png',
                     'logo.png',
                     'logo.png',
-                    'logo.png',
-                    'logo.png',
-                    'logo.png',
-                    'logo.png',
-                    'logo.png',
                 ]; @endphp
 
                 @foreach($partnerLogos as $logo)
@@ -57,7 +52,7 @@
     // ==========================================
     // Partners Carousel
     // ==========================================
-    (function () {
+    document.addEventListener('DOMContentLoaded', function () {
         const track = document.getElementById('partnersTrack');
         const viewport = document.getElementById('partnersViewport');
         const prevBtn = document.getElementById('partnersPrev');
@@ -66,6 +61,9 @@
 
         let currentIndex = 0;
         let autoInterval;
+
+        // Check text direction
+        const isRTL = document.documentElement.dir === 'rtl';
 
         function getVisibleCards() {
             const vw = viewport.offsetWidth;
@@ -91,8 +89,13 @@
             const visible = getVisibleCards();
             const maxIndex = total - visible;
             currentIndex = Math.max(0, Math.min(index, maxIndex));
+            
             const offset = currentIndex * getCardWidth();
-            track.style.transform = `translateX(${offset}px)`;
+            // In RTL, we translate positive X to show items overflowing to the left.
+            // In LTR, we translate negative X to show items overflowing to the right.
+            const translateX = isRTL ? offset : -offset;
+            
+            track.style.transform = `translateX(${translateX}px)`;
         }
 
         prevBtn && prevBtn.addEventListener('click', () => { goTo(currentIndex - 1); resetAuto(); });
@@ -103,7 +106,12 @@
         viewport.addEventListener('touchend', e => {
             const diff = e.changedTouches[0].screenX - touchStartX;
             if (Math.abs(diff) > 50) {
-                diff > 0 ? goTo(currentIndex - 1) : goTo(currentIndex + 1);
+                // Adjust touch direction based on RTL/LTR
+                if (isRTL) {
+                    diff > 0 ? goTo(currentIndex - 1) : goTo(currentIndex + 1);
+                } else {
+                    diff > 0 ? goTo(currentIndex - 1) : goTo(currentIndex + 1);
+                }
                 resetAuto();
             }
         }, { passive: true });
@@ -127,7 +135,9 @@
         viewport.addEventListener('mouseenter', () => clearInterval(autoInterval));
         viewport.addEventListener('mouseleave', startAuto);
 
+        // Optional: Ensure first dimension calc is run
+        setTimeout(() => goTo(0), 100);
         startAuto();
         window.addEventListener('resize', () => goTo(currentIndex));
-    })();
+    });
 </script>
