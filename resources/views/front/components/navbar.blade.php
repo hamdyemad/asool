@@ -14,7 +14,10 @@
         <!-- Floating Navbar Capsule (Center) -->
         <div class="nav-capsule" id="navCapsule">
             <div class="nav-download">
-                <a href="#"><i class="fas fa-download"></i> تحميل الكتالوج</a>
+                <a href="{{ asset('/front/كتالوج أصول عربي (1).pdf') }}"><i class="fas fa-download"></i> تحميل الكتالوج بالعربى</a>
+            </div>
+            <div class="nav-download">
+                <a href="{{ asset('/front/كتالوج أصول انجليزي 01.pdf') }}"><i class="fas fa-download"></i> تحميل الكتالوج بالانجليزية</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#contact">تواصل معنا</a></li>

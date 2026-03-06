@@ -17,14 +17,26 @@
         <div class="partners-viewport" id="partnersViewport">
             <div class="partners-track" id="partnersTrack">
                 @php $partnerLogos = [
-                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
-                    'section2/image 10.png',
-                    'section2/image 11.png',
-                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
-                    'section2/image 10.png',
-                    'section2/image 11.png',
-                    '1e322c96b6a50c814a9fb5592f6b39e2ae162035.png',
-                    'section2/image 10.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
+                    'logo.png',
                 ]; @endphp
 
                 @foreach($partnerLogos as $logo)

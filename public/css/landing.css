@@ -18,7 +18,6 @@
     font-family: "Cairo", sans-serif;
 }
 
-
 ul {
     padding: 0;
     margin: 0;
@@ -94,7 +93,7 @@ body {
     flex-direction: row-reverse;
     overflow: hidden;
     height: 60px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .nav-download {
@@ -261,7 +260,7 @@ body {
     line-height: 1.15;
     font-weight: 900;
     margin-bottom: 25px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -327,7 +326,7 @@ body {
 
 .btn-white:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
     border-color: var(--primary-color);
 }
 
@@ -345,7 +344,7 @@ body {
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid rgba(255,255,255,0.15);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     transition: var(--transition);
     opacity: 0.6;
 }
@@ -382,14 +381,14 @@ body {
 .progress-dot {
     width: 50px;
     height: 5px;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     cursor: pointer;
     transition: var(--transition);
 }
 
 .progress-dot:hover {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .progress-dot.active {
@@ -491,7 +490,7 @@ body {
     width: 30px;
     height: 30px;
     background: var(--white);
-    
+
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
@@ -815,7 +814,7 @@ body {
 
 .stat-box:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .stat-green {
@@ -849,7 +848,7 @@ body {
 }
 
 .stat-green .stat-label {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .stat-light .stat-label {
@@ -965,7 +964,7 @@ body {
     font-weight: 800;
     margin-bottom: 8px;
     line-height: 1.5;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .service-glass-overlay p {
@@ -1031,14 +1030,10 @@ body {
 }
 
 /* ==========================================
-   Circular Diagram
-   ========================================== */
-/* ==========================================
    Sustainable Technology Section (تقنيات مستدامة)
    ========================================== */
 .sustainable-tech {
-    padding: 100px 0;
-    background: #fff;
+    padding: 60px 0;
     overflow: hidden;
 }
 
@@ -1046,176 +1041,180 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1350px;
+    max-width: 1400px;
     margin: 0 auto;
     position: relative;
     gap: 0;
+    padding: 0 40px;
 }
 
 .sust-col {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 48px;
     z-index: 2;
 }
 
-.sust-pill {
+/* ---- Leaf / Teardrop Cards ---- */
+.sust-leaf {
+    position: relative;
+    width: 420px;
+    height: 120px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-    border-radius: 80px;
-    background: #fff;
     transition: var(--transition);
+    border-radius: 60px;
     overflow: hidden;
-    position: relative;
-    width: 440px;
-    min-height: 120px;
 }
 
-.sust-pill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+.sust-leaf:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
-.sust-left .sust-pill {
-    padding-left: 0;
-}
-
-.sust-right .sust-pill {
-    padding-right: 0;
-}
-
-.sust-pill-text {
-    flex: 1;
-    padding: 15px 25px;
-}
-
-.sust-pill-text h4 {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: var(--secondary-color);
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
-
-.sust-pill-text p {
-    font-size: 0.78rem;
-    color: #777;
-    margin: 0;
-    line-height: 1.6;
-}
-
-.sust-left .sust-pill-text {
-    text-align: right;
-    padding-right: 30px;
-}
-
-.sust-right .sust-pill-text {
-    text-align: left;
-    padding-left: 30px;
-}
-
-.sust-pill-icon {
-    width: 110px;
-    align-self: stretch;
+/* Leaf icon block — container for the vector bg + icon */
+.sust-leaf-icon {
+    width: 120px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    flex-shrink: 0;
     position: relative;
 }
 
-.sust-pill-icon img {
-    width: 40px;
-    height: 40px;
+/* The leaf-shaped background vector image — fills the icon zone */
+.sust-leaf-bg {
+    position: absolute;
+    inset: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    object-fit: fill;
+    z-index: 0;
+    filter: none !important;
+}
+
+/* The actual icon image on top of the leaf bg */
+.sust-leaf-icon-img {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
-    z-index: 3;
+    filter: brightness(0) invert(1);
 }
 
-.sust-pill-icon i {
-    font-size: 2rem;
-    z-index: 3;
+/* Card content text — white for dark theme */
+.sust-leaf-content {
+    flex: 1;
+    padding: 0 25px;
+    text-align: right;
 }
 
-/* Specific Pill Backgrounds based on Figma */
-.bg-dark-green { background: #3b5a19; }
-.bg-mid-green { background: #4a7c1b; }
-.bg-olive-green { background: #5a911a; }
-.bg-light-green { background: #88c642; }
-.bg-lime-green { background: #71b931; }
-.bg-leaf-green { background: #5fa524; }
+.sust-leaf-content h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
 
+.sust-leaf-content p {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ---- Center Circle with Ring ---- */
 .sust-center {
-    margin: 0 -40px; /* Overlap with left/right pills */
+    margin: 0 -30px;
     z-index: 5;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
-/* 6-segment colored ring */
-.sust-center::before {
+.sust-ring {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.sust-ring-segment {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.sust-ring-segment.seg-1 {
+    background: conic-gradient(from 330deg, #88c642 0deg, #88c642 50deg, transparent 50deg);
+}
+.sust-ring-segment.seg-2 {
+    background: conic-gradient(from 30deg, #71b931 0deg, #71b931 50deg, transparent 50deg);
+}
+.sust-ring-segment.seg-3 {
+    background: conic-gradient(from 90deg, #5fa524 0deg, #5fa524 50deg, transparent 50deg);
+}
+.sust-ring-segment.seg-4 {
+    background: conic-gradient(from 150deg, #5a911a 0deg, #5a911a 50deg, transparent 50deg);
+}
+.sust-ring-segment.seg-5 {
+    background: conic-gradient(from 210deg, #4a7c1b 0deg, #4a7c1b 50deg, transparent 50deg);
+}
+.sust-ring-segment.seg-6 {
+    background: conic-gradient(from 270deg, #3b5a19 0deg, #3b5a19 50deg, transparent 50deg);
+}
+
+/* Punch out the center to create a ring effect */
+.sust-ring-segment::after {
     content: "";
     position: absolute;
-    width: 330px;
-    height: 330px;
+    inset: 22px;
     border-radius: 50%;
-    /* Order from top-right clockwise */
-    background: conic-gradient(
-        transparent 0deg 4deg,
-        #88c642 4deg 56deg,     /* Top Right */
-        transparent 56deg 64deg,
-        #71b931 64deg 116deg,   /* Mid Right */
-        transparent 116deg 124deg,
-        #5fa524 124deg 176deg,  /* Bot Right */
-        transparent 176deg 184deg,
-        #5a911a 184deg 236deg,  /* Bot Left */
-        transparent 236deg 244deg,
-        #4a7c1b 244deg 296deg,  /* Mid Left */
-        transparent 296deg 304deg,
-        #3b5a19 304deg 356deg,  /* Top Left */
-        transparent 356deg 360deg
-    );
-    z-index: -1;
+    background: #1b1b1b;
 }
 
 .sust-center-circle {
-    width: 290px;
-    height: 290px;
+    width: 296px;
+    height: 296px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 60px rgba(100, 150, 40, 0.15);
+    box-shadow: 0 0 0 6px #fff, 0 0 60px rgba(100, 150, 40, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     position: relative;
     z-index: 10;
-    margin: 0px 80px;
+    margin: 0 70px;
 }
 
 .sust-logo-img {
-    width: 100px;
-    margin-bottom: 20px;
+    width: 90px;
+    margin-bottom: 15px;
 }
 
 .sust-center-circle h3 {
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 900;
-    line-height: 1.4;
-    margin-bottom: 10px;
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 .sust-center-circle p {
-    font-size: 0.8rem;
-    color: #555;
+    font-size: 0.78rem;
+    color: #666;
     font-weight: 600;
-    line-height: 1.5;
-    padding: 0 15px;
+    line-height: 1.6;
+    padding: 0 10px;
 }
 
 /* ==========================================
@@ -1256,20 +1255,33 @@ body {
 
 .market-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Base custom colors */
-.bg-mc-1 { background: #0c6a3a; }
-.bg-mc-2 { background: #078049; }
-.bg-mc-3 { background: #0ba04f; }
-.bg-mc-4 { background: #046554; }
-.bg-mc-5 { background: #058a5e; }
-.bg-mc-6 { background: #0a8fa2; }
+.bg-mc-1 {
+    background: #0c6a3a;
+}
+.bg-mc-2 {
+    background: #078049;
+}
+.bg-mc-3 {
+    background: #0ba04f;
+}
+.bg-mc-4 {
+    background: #046554;
+}
+.bg-mc-5 {
+    background: #058a5e;
+}
+.bg-mc-6 {
+    background: #0a8fa2;
+}
 
 /* Abstract corner bubbles */
-.market-card::before, .market-card::after {
-    content: '';
+.market-card::before,
+.market-card::after {
+    content: "";
     position: absolute;
     width: 130px;
     height: 130px;
@@ -1354,7 +1366,7 @@ body {
     border: 1px solid #f0f0f0;
     border-radius: 20px;
     padding: 25px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .sidebar-badge {
@@ -1374,7 +1386,8 @@ body {
 
 .sidebar-badge .badge-leaf {
     width: 16px;
-    filter: brightness(0) saturate(100%) invert(48%) sepia(20%) saturate(2126%) hue-rotate(43deg) brightness(101%) contrast(92%);
+    filter: brightness(0) saturate(100%) invert(48%) sepia(20%) saturate(2126%)
+        hue-rotate(43deg) brightness(101%) contrast(92%);
 }
 
 .products-sidebar h3 {
@@ -1408,8 +1421,9 @@ body {
     font-size: 0.95rem;
 }
 
-.sidebar-menu a:hover, .sidebar-menu a.active {
-    background: #8fc945; 
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: #8fc945;
     color: #fff;
     border-color: #8fc945;
 }
@@ -1431,7 +1445,7 @@ body {
 .filter-btn {
     padding: 10px 25px;
     border-radius: 12px;
-    border: 1px solid #a4d360; 
+    border: 1px solid #a4d360;
     background: white;
     color: #8fc945;
     cursor: pointer;
@@ -1441,7 +1455,8 @@ body {
     font-weight: 800;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background: #8fc945;
     color: white;
     border-color: #8fc945;
@@ -1460,11 +1475,11 @@ body {
     padding: 25px 20px;
     text-align: center;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .product-card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     transform: translateY(-5px);
 }
 
@@ -1499,7 +1514,7 @@ body {
     align-items: center;
     border: 1px solid #a4d360;
     border-radius: 30px;
-    padding: 4px 15px 4px 5px; 
+    padding: 4px 15px 4px 5px;
     color: #8fc945;
     font-weight: 800;
     font-size: 0.9rem;
@@ -1525,7 +1540,7 @@ body {
 }
 
 .prod-more-icon i {
-    transform: rotate(-45deg); 
+    transform: rotate(-45deg);
 }
 
 /* Pagination */
@@ -1559,7 +1574,8 @@ body {
     transition: var(--transition);
 }
 
-.products-pagination a:hover, .products-pagination a.active {
+.products-pagination a:hover,
+.products-pagination a.active {
     background: #eaf3db;
     color: var(--primary-color);
     border-color: #8fc945;
@@ -1620,7 +1636,7 @@ body {
 
 .product-card:hover {
     transform: translateY(-10px) rotateX(5deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -1752,7 +1768,8 @@ body {
 
 .contact-header .badge-leaf {
     width: 16px;
-    filter: brightness(0) saturate(100%) invert(48%) sepia(20%) saturate(2126%) hue-rotate(43deg) brightness(101%) contrast(92%);
+    filter: brightness(0) saturate(100%) invert(48%) sepia(20%) saturate(2126%)
+        hue-rotate(43deg) brightness(101%) contrast(92%);
 }
 
 .contact-header h2 {
@@ -1787,7 +1804,7 @@ body {
     height: 500px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .contact-image-col img {
@@ -1877,7 +1894,8 @@ body {
     left: 0;
     width: 100%;
     height: 300px;
-    background: url("/front/73e9f54659b15ceab9ef1157babdb9c3a8df23c8.png") repeat-x bottom;
+    background: url("/front/73e9f54659b15ceab9ef1157babdb9c3a8df23c8.png")
+        repeat-x bottom;
     background-size: contain;
     z-index: 5;
     pointer-events: none;
@@ -2139,7 +2157,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
 .partner-card:hover {
@@ -2175,7 +2195,7 @@ body {
     justify-content: center;
     transition: all 0.3s;
     flex-shrink: 0;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .partners-nav-btn:hover {
@@ -2271,7 +2291,7 @@ body {
         border-radius: 12px;
         width: 100%;
         background: rgba(3, 79, 49, 0.98);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     }
     .nav-capsule.show {
         display: flex; /* Display when toggled */
@@ -2287,7 +2307,7 @@ body {
     .nav-menu li {
         width: 100%;
         text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     .nav-menu li a {
         display: block;
@@ -2304,7 +2324,7 @@ body {
         border-radius: 30px;
         padding: 10px 30px;
     }
-    
+
     /* Hero */
     .hero {
         padding-top: 150px;
@@ -2330,7 +2350,7 @@ body {
         bottom: 20px;
         right: 5%;
     }
-    
+
     /* Sections Layout */
     .partnership-container,
     .why-partnership,
@@ -2338,14 +2358,14 @@ body {
     .contact-container {
         flex-direction: column;
     }
-    
+
     .why-partnership-image img,
     .about-us-images,
     .contact-image-col {
         width: 100%;
         margin-top: 30px;
     }
-    
+
     /* Sustainable Tech — Full Mobile Reflow */
     .sust-container {
         flex-direction: column;
@@ -2356,21 +2376,20 @@ body {
     .sust-col {
         width: 100%;
         align-items: center;
-        order: 2;         /* Pills appear BELOW the center circle */
+        order: 2;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 16px;
     }
     .sust-center {
-        order: 1;         /* Center circle stays on top */
+        order: 1;
         margin: 0;
         width: 100%;
         display: flex;
         justify-content: center;
     }
-    /* Reset the conic ring pseudo-element size for small screens */
-    .sust-center::before {
+    .sust-ring {
         width: 260px;
         height: 260px;
     }
@@ -2379,43 +2398,48 @@ body {
         height: 240px;
         margin: 0;
     }
-    /* Pill reset for mobile */
-    .sust-pill {
-        flex-direction: row !important;
-        clip-path: none !important;
-        border-radius: 60px !important;
-        background: #fdfdfd !important;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        margin: 0 !important;
+    /* Leaf card reset for mobile */
+    .sust-leaf {
         width: calc(50% - 8px);
-        min-height: 90px;
+        min-height: auto;
+        height: auto;
+        border-radius: 20px;
     }
-    /* On very small phones, full width pills */
+    .sust-leaf-icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+    .sust-leaf-icon-img {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    .sust-leaf-right .sust-leaf-icon {
+        border-radius: 20px 0 0 20px;
+    }
+    .sust-leaf-left .sust-leaf-icon {
+        border-radius: 0 20px 20px 0;
+    }
+    /* On very small phones, full width cards */
     @media (max-width: 480px) {
-        .sust-pill {
+        .sust-leaf {
             width: 100%;
         }
     }
-    .sust-pill-text {
-        padding: 12px 14px;
-    }
-    .sust-pill-text h4 {
+    .sust-leaf-content h4 {
         font-size: 0.82rem !important;
         margin: 0 0 4px !important;
     }
-    .sust-pill-text p {
+    .sust-leaf-content p {
         font-size: 0.7rem !important;
         line-height: 1.4;
     }
-    .sust-pill-icon {
-        width: 70px;
-        min-height: 90px;
-        border-radius: 60px 0 0 60px;
-        flex-shrink: 0;
+    .sust-leaf-right .sust-leaf-content,
+    .sust-leaf-left .sust-leaf-content {
+        text-align: center !important;
     }
-    .sust-left .sust-pill-icon {
-        border-radius: 0 60px 60px 0;
+    .sust-leaf-deco {
+        display: none;
     }
     .sust-center-circle h3 {
         font-size: 1rem;
@@ -2423,13 +2447,13 @@ body {
     .sust-center-circle p {
         font-size: 0.72rem;
     }
-    
+
     /* Grids */
     .market-grid,
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .products-container {
         flex-direction: column;
     }
@@ -2437,7 +2461,7 @@ body {
         width: 100%;
         margin-bottom: 30px;
     }
-    
+
     /* Footer */
     .footer-container,
     .footer-contact-bar {
@@ -2446,7 +2470,8 @@ body {
         text-align: center;
         gap: 30px;
     }
-    .footer-logo-col, .footer-col-center {
+    .footer-logo-col,
+    .footer-col-center {
         align-items: center;
     }
     .contact-box {
@@ -2473,15 +2498,17 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    .btn-green, .btn-white {
+    .btn-green,
+    .btn-white {
         width: 100%;
         justify-content: center;
         max-width: 300px;
     }
-    .hero-thumbs, .hero-progress {
+    .hero-thumbs,
+    .hero-progress {
         display: none; /* Hide thumbs and dots on very small screens or re-position them */
     }
-    
+
     /* Section Padding Adjustments */
     .contact-section,
     .partnership-section,
@@ -2500,7 +2527,7 @@ body {
     .products-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .services-grid .grid-item-1,
     .services-grid .grid-item-2,
     .services-grid .grid-item-3,

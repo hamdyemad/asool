@@ -1,6 +1,12 @@
 @extends('front.layout')
 
-@section('title', 'حلولنا - أصول الزراعة')
+@section('title', 'منتجات وحلول الري الذكي - أصول الزراعة (SOOL)')
+@section('meta_description', 'تصفح أحدث منتجات وحلول الري ومحطات مراقبة الطقس من أصول الزراعة. أنظمة تحكم عن بعد، حساسات LoRa، وحلول للفلل والمزارع الذكية.')
+@section('meta_keywords', 'منتجات الري الذكي, تحكم في الري عن بعد, حساسات LoRa, محطة طقس زراعية, ري الفلل, الري الحضري, أصول الزراعة, منتجات SOOL')
+@section('canonical_url', url('/solutions'))
+@section('og_title', 'استكشف منتجات وحلول أصول الزراعة')
+@section('og_description', 'مجموعة واسعة من الأجهزة التكنولوجية المصممة للري والزراعات الحديثة.')
+
 
 @section('extra_css')
 <style>
@@ -489,6 +495,119 @@
             padding: 4px 12px;
         }
     }
+
+    /* ============================================
+       SOLUTIONS PAGE - STATIC PRODUCTS SHOWCASE
+    ============================================ */
+    .solutions-products-showcase {
+        padding: 80px 10%;
+        background: #fff;
+    }
+
+    .solutions-products-showcase .section-title {
+        margin-bottom: 50px;
+    }
+
+    .solutions-products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+    .solutions-products-grid .product-card {
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        border-radius: 16px;
+        padding: 25px 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .solutions-products-grid .product-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transform: translateY(-5px);
+    }
+
+    .solutions-products-grid .product-image {
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .solutions-products-grid .product-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .solutions-products-grid .product-title {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+    }
+
+    .solutions-products-grid .product-subtitle {
+        font-size: 0.85rem;
+        color: #888;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        min-height: 40px;
+    }
+
+    .solutions-products-grid .product-action {
+        display: flex;
+        justify-content: center;
+    }
+
+    .solutions-products-grid .prod-more-btn {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #a4d360;
+        border-radius: 30px;
+        padding: 4px 15px 4px 5px;
+        color: #8fc945;
+        font-weight: 800;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        gap: 10px;
+    }
+
+    .solutions-products-grid .prod-more-btn:hover {
+        background: #f0f8e0;
+    }
+
+    .solutions-products-grid .prod-more-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #8fc945;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    @media (max-width: 992px) {
+        .solutions-products-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .solutions-products-grid {
+            grid-template-columns: 1fr;
+        }
+        .solutions-products-showcase {
+            padding: 50px 5%;
+        }
+    }
 </style>
 @endsection
 
@@ -615,7 +734,77 @@
      NORMAL PAGE CONTENT (Scrolls Natively)
 ============================================ -->
 <div class="normal-content" id="normalContent" style="background: #fff; position: relative; z-index: 10;">
-    @include('front.components.products')
+
+    <!-- Static Products Showcase (Figma Design) -->
+    <section class="solutions-products-showcase" id="solutions-products">
+        <div class="section-title text-center">
+            <span class="badge"><img src="{{ asset('front/services/drop.png') }}" alt="" class="badge-leaf"> المنتجات</span>
+            <h2>اكتشفوا منتجاتنا</h2>
+        </div>
+
+        <div class="solutions-products-grid">
+            <!-- LR-MS-ECO (leftmost in RTL) -->
+            <div class="product-card">
+                <h4 class="product-title">LR-MS-ECO</h4>
+                <p class="product-subtitle">LoRa Regarcheable Sensor Module</p>
+                <div class="product-image">
+                    <img src="{{ asset('front/second_page/a8a6dafc48e92ebcac2064652e46d0f81cd3d6b4.png') }}" alt="LR-MS-ECO">
+                </div>
+                <div class="product-action">
+                    <a href="#" class="prod-more-btn">
+                        اعرف المزيد
+                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Irrigation Station -->
+            <div class="product-card">
+                <h4 class="product-title">Irrigation Station</h4>
+                <p class="product-subtitle">All-in-one 4G Gateway and Weather Station</p>
+                <div class="product-image">
+                    <img src="{{ asset('front/second_page/0ef74d8784b461d82b8c635657604bb2ae2f3b1c.png') }}" alt="Irrigation Station">
+                </div>
+                <div class="product-action">
+                    <a href="#" class="prod-more-btn">
+                        اعرف المزيد
+                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- LR-IP-ECO -->
+            <div class="product-card">
+                <h4 class="product-title">LR-IP-ECO</h4>
+                <p class="product-subtitle">LoRa Rechargeable Irrigation Controller ™</p>
+                <div class="product-image">
+                    <img src="{{ asset('front/second_page/745f60546c5f370624e3ba51148a05644c09e092.png') }}" alt="LR-IP-ECO">
+                </div>
+                <div class="product-action">
+                    <a href="#" class="prod-more-btn">
+                        اعرف المزيد
+                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VILLA (rightmost in RTL) -->
+            <div class="product-card">
+                <h4 class="product-title">VILLA</h4>
+                <p class="product-subtitle">Wi-Fi Outdoor AC-Powered Irrigation Controller</p>
+                <div class="product-image">
+                    <img src="{{ asset('front/second_page/50de94cb37aca8f3795e8acd6dc040906227b247.png') }}" alt="VILLA">
+                </div>
+                <div class="product-action">
+                    <a href="#" class="prod-more-btn">
+                        اعرف المزيد
+                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @include('front.components.contact')
 </div>
 
