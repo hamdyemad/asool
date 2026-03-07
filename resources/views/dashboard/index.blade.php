@@ -67,18 +67,7 @@
                         <div class="col-xl-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Monthly Earnings</h4>
-
-                                    <div class="row text-center mt-4">
-                                        <div class="col-6">
-                                            <h5 class="font-size-20">$56241</h5>
-                                            <p class="text-muted">Marketplace</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h5 class="font-size-20">$23651</h5>
-                                            <p class="text-muted">Total Income</p>
-                                        </div>
-                                    </div>
+                                    <h4 class="card-title mb-4">Catalog Overview</h4>
 
                                     <div id="morris-donut-example" class="morris-charts morris-charts-height" dir="ltr"></div>
                                 </div>
@@ -88,22 +77,7 @@
                         <div class="col-xl-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Email Sent</h4>
-
-                                    <div class="row text-center mt-4">
-                                        <div class="col-4">
-                                            <h5 class="font-size-20">$ 89425</h5>
-                                            <p class="text-muted">Marketplace</p>
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="font-size-20">$ 56210</h5>
-                                            <p class="text-muted">Total Income</p>
-                                        </div>
-                                        <div class="col-4">
-                                            <h5 class="font-size-20">$ 8974</h5>
-                                            <p class="text-muted">Last Month</p>
-                                        </div>
-                                    </div>
+                                    <h4 class="card-title mb-4">Catalog Growth (Last 6 Months)</h4>
 
                                     <div id="morris-area-example" class="morris-charts morris-charts-height" dir="ltr"></div>
                                 </div>
@@ -113,18 +87,7 @@
                         <div class="col-xl-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Monthly Earnings</h4>
-
-                                    <div class="row text-center mt-4">
-                                        <div class="col-6">
-                                            <h5 class="font-size-20">$ 2548</h5>
-                                            <p class="text-muted">Marketplace</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <h5 class="font-size-20">$ 6985</h5>
-                                            <p class="text-muted">Total Income</p>
-                                        </div>
-                                    </div>
+                                    <h4 class="card-title mb-4">Creations over Time</h4>
 
                                     <div id="morris-bar-stacked" class="morris-charts morris-charts-height" dir="ltr"></div>
                                 </div>
@@ -501,5 +464,87 @@
 <!--Morris Chart-->
             <script src="{{ URL::asset('/libs/morris.js/morris.js.min.js')}}"></script>
             <script src="{{ URL::asset('/libs/raphael/raphael.min.js')}}"></script>
-            <script src="{{ URL::asset('/js/pages/dashboard.init.js')}}"></script>
+            <script>
+            !function ($) {
+                "use strict";
+
+                var Dashboard = function () {};
+
+                Dashboard.prototype.createAreaChart = function (element, pointSize, lineWidth, data, xkey, ykeys, labels, lineColors) {
+                    Morris.Area({
+                        element: element,
+                        pointSize: 0,
+                        lineWidth: 1,
+                        data: data,
+                        xkey: xkey,
+                        ykeys: ykeys,
+                        labels: labels,
+                        resize: true,
+                        gridLineColor: 'rgba(108, 120, 151, 0.1)',
+                        hideHover: 'auto',
+                        lineColors: lineColors,
+                        fillOpacity: .9,
+                        behaveLikeLine: true
+                    });
+                };
+
+                Dashboard.prototype.createDonutChart = function (element, data, colors) {
+                    Morris.Donut({
+                        element: element,
+                        data: data,
+                        resize: true,
+                        colors: colors
+                    });
+                };
+
+                Dashboard.prototype.createStackedChart = function (element, data, xkey, ykeys, labels, lineColors) {
+                    Morris.Bar({
+                        element: element,
+                        data: data,
+                        xkey: xkey,
+                        ykeys: ykeys,
+                        stacked: true,
+                        labels: labels,
+                        hideHover: 'auto',
+                        resize: true,
+                        gridLineColor: 'rgba(108, 120, 151, 0.1)',
+                        barColors: lineColors
+                    });
+                };
+
+                Dashboard.prototype.init = function () {
+                    var $areaData = {!! json_encode($monthsData ?? []) !!};
+                    this.createAreaChart('morris-area-example', 0, 0, $areaData, 'y', ['a', 'b', 'c'], ['Products', 'Categories', 'SubCategories'], ['#28bbe3', '#7a6fbe', '#f0f1f4']);
+
+                    var $donutData = [
+                        { label: "Products", value: {{ $productsCount ?? 0 }} },
+                        { label: "Categories", value: {{ $categoriesCount ?? 0 }} },
+                        { label: "SubCategories", value: {{ $subCategoriesCount ?? 0 }} }
+                    ];
+                    this.createDonutChart('morris-donut-example', $donutData, ['#28bbe3', '#7a6fbe', '#f0f1f4']);
+
+                    var $stckedData = {!! json_encode($monthsData ?? []) !!};
+                    this.createStackedChart('morris-bar-stacked', $stckedData, 'y', ['a', 'b', 'c'], ['Products', 'Categories', 'SubCategories'], ['#28bbe3', '#7a6fbe', '#f0f1f4']);
+                };
+
+                $.Dashboard = new Dashboard(), $.Dashboard.Constructor = Dashboard;
+            }(window.jQuery);
+
+            (function ($) {
+                "use strict";
+                setTimeout(function() {
+                    $.Dashboard.init();
+                    
+                    if($.fn.sparkline) {
+                        $('#sparkline').sparkline([8, 6, 4, 7, 10, 12, 7, 4, 9, 12, 13, 11, 12], {
+                            type: 'bar',
+                            height: '130',
+                            barWidth: '10',
+                            barSpacing: '7',
+                            barColor: '#7A6FBE'
+                        });
+                    }
+                }, 100);
+            })(window.jQuery);
+            </script>
 @endsection

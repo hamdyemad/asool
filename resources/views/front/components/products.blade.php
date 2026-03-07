@@ -43,13 +43,6 @@
             <div class="products-pagination" id="products-pagination">
                 <!-- Pagination will be loaded here via API -->
             </div>
-
-            <div class="products-view-all text-center">
-                <a href="#" class="view-all-btn" id="view-all-products">
-                    <span class="view-all-icon"><i class="fas fa-arrow-up"></i></span>
-                    عرض جميع المنتجات
-                </a>
-            </div>
         </div>
     </div>
 </section>

@@ -21,7 +21,7 @@
         <p id="hero-desc">في شركة أصول الزراعة للتجارة، نلتزم بتوفير أحدث التقنيات الزراعية وأنظمة الري المبتكرة. نحن نسعى جاهدين لتعزيز الإنتاجية الزراعية وتحسين كفاءة استخدام المياه من خلال حلول مستدامة وموثوقة.</p>
 
         <div class="hero-btns">
-            <a href="#" class="btn-green"><img src="{{ asset('front/basil_arrow-up-solid.png') }}" alt="arrow" class="btn-green-icon"> استكشف خدماتنا</a>
+            <a href="#services" class="btn-green"><img src="{{ asset('front/basil_arrow-up-solid.png') }}" alt="arrow" class="btn-green-icon"> استكشف خدماتنا</a>
             <a href="#products" class="btn-white">منتجاتنا</a>
         </div>
     </div>

@@ -750,12 +750,6 @@
                 <div class="product-image">
                     <img src="{{ asset('front/second_page/a8a6dafc48e92ebcac2064652e46d0f81cd3d6b4.png') }}" alt="LR-MS-ECO">
                 </div>
-                <div class="product-action">
-                    <a href="#" class="prod-more-btn">
-                        اعرف المزيد
-                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
-                    </a>
-                </div>
             </div>
 
             <!-- Irrigation Station -->
@@ -764,12 +758,6 @@
                 <p class="product-subtitle">All-in-one 4G Gateway and Weather Station</p>
                 <div class="product-image">
                     <img src="{{ asset('front/second_page/0ef74d8784b461d82b8c635657604bb2ae2f3b1c.png') }}" alt="Irrigation Station">
-                </div>
-                <div class="product-action">
-                    <a href="#" class="prod-more-btn">
-                        اعرف المزيد
-                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
-                    </a>
                 </div>
             </div>
 
@@ -780,12 +768,6 @@
                 <div class="product-image">
                     <img src="{{ asset('front/second_page/745f60546c5f370624e3ba51148a05644c09e092.png') }}" alt="LR-IP-ECO">
                 </div>
-                <div class="product-action">
-                    <a href="#" class="prod-more-btn">
-                        اعرف المزيد
-                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
-                    </a>
-                </div>
             </div>
 
             <!-- VILLA (rightmost in RTL) -->
@@ -794,12 +776,6 @@
                 <p class="product-subtitle">Wi-Fi Outdoor AC-Powered Irrigation Controller</p>
                 <div class="product-image">
                     <img src="{{ asset('front/second_page/50de94cb37aca8f3795e8acd6dc040906227b247.png') }}" alt="VILLA">
-                </div>
-                <div class="product-action">
-                    <a href="#" class="prod-more-btn">
-                        اعرف المزيد
-                        <span class="prod-more-icon"><i class="fas fa-arrow-up"></i></span>
-                    </a>
                 </div>
             </div>
         </div>

@@ -23,9 +23,9 @@
             <ul class="nav-menu">
                 <li><a href="#contact">تواصل معنا</a></li>
                 <li><a href="#partners">شركاء النجاح</a></li>
-                <li><a href="#products">منتجاتنا <i class="fas fa-chevron-down"></i></a></li>
-                <li><a href="#services">خدماتنا <i class="fas fa-chevron-down"></i></a></li>
-                <li><a href="#about">من نحن <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#products">منتجاتنا</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#about-details">من نحن</a></li>
                 <li class="active"><a href="{{ route('home') }}">الرئيسية</a></li>
             </ul>
         </div>
