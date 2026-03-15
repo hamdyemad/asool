@@ -59,6 +59,21 @@ Route::get('/product-details', function () {
     return view('front.product-details');
 })->name('product.details');
 
+Route::post('/contact/send', 'ContactController@send')->name('contact.send');
+
+// Test mail configuration (remove after testing)
+Route::get('/test-mail', function () {
+    try {
+        \Illuminate\Support\Facades\Mail::raw('Test email from Asool', function ($message) {
+            $message->to('info@osool1.com')
+                ->subject('Test Email');
+        });
+        return 'Email sent successfully! Check your inbox.';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
+});
+
 Route::get('/solutions', function () {
     return view('front.solutions');
 });

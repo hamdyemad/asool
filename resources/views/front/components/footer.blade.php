@@ -32,11 +32,8 @@
             <img src="{{ asset('front/logo.png') }}" alt="SOOL Agriculture" class="footer-logo">
             <h4 class="footer-social-title">وسائل التواصل الاجتماعي</h4>
             <div class="footer-social-icons">
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@osoolagri"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/osoolagri/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -48,14 +45,14 @@
             <img src="{{ asset('front/footer/1.png') }}">
             <div class="contact-box-text">
                 <span>الهاتف</span>
-                <p dir="ltr">310-437-2766</p>
+                <p dir="ltr">+966 598613005</p>
             </div>
         </div>
         <div class="contact-box">
             <img src="{{ asset('front/footer/2.png') }}">
             <div class="contact-box-text">
                 <span>البريد الالكتروني</span>
-                <p>unreal@outlook.com</p>
+                <p>info@osool1.com</p>
             </div>
         </div>
         <div class="contact-box">
