@@ -39,6 +39,24 @@
 
     </div>
 
+    <!-- Tax & CR Info Bar -->
+    <div class="footer-contact-bar" style="margin-bottom: 20px;">
+        <div class="contact-box">
+            <img src="{{ asset('images/vat.jpg') }}" style="width: 80px; height: 80px; border-radius: 4px;">
+            <div class="contact-box-text">
+                <span>رقم ضريبي</span>
+                <p>3021305787</p>
+            </div>
+        </div>
+        <div class="contact-box">
+            <img src="{{ asset('images/saudi.jpg') }}" style="width: 80px; height: 80px; border-radius: 4px;">
+            <div class="contact-box-text">
+                <span>سجل تجاري</span>
+                <p>1131299893</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Bottom Contact Info Bar -->
     <div class="footer-contact-bar">
         <div class="contact-box">
@@ -61,47 +79,6 @@
                 <span>العنوان</span>
                 <p>7888 شارع الصباح، حي الصباح، وحدة 2936، بريدة 52339، المملكة العربية السعوديه</p>
             </div>
-        </div>
-    </div>
-
-    <!-- VAT & Registration Info Section -->
-    <div class="footer-registration-info" style="background-color: var(--secondary-color); color: var(--white); padding: 40px; border-radius: 16px; max-width: 1300px; width: 90%; margin: 40px auto; display: flex; flex-direction: column; align-items: center; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        
-        <!-- Logo -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img src="{{ asset('front/logo.png') }}" style="height: 70px; filter: brightness(0) invert(1);" alt="SOOL Agriculture">
-        </div>
-
-        <!-- Info Row -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 20px; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 25px 0;">
-            
-            <!-- Saudi Logo -->
-            <div style="display: flex; align-items: center; justify-content: center;">
-                <img src="{{ asset('images/saudi.jpg') }}" alt="Saudi" style="height: 80px; object-fit: contain; border-radius: 8px;">
-            </div>
-
-            <!-- Tax Number -->
-            <div style="text-align: center;">
-                <div style="font-size: 1.2rem; margin-bottom: 8px; color: #e5e5e5;">رقم ضريبي</div>
-                <div style="font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">3021305787</div>
-            </div>
-
-            <!-- CR Number -->
-            <div style="text-align: center;">
-                <div style="font-size: 1.2rem; margin-bottom: 8px; color: #e5e5e5;">سجل تجاري</div>
-                <div style="font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">1131299893</div>
-            </div>
-
-            <!-- VAT Logo -->
-            <div style="display: flex; align-items: center; justify-content: center;">
-                <img src="{{ asset('images/vat.jpg') }}" alt="VAT" style="height: 80px; object-fit: contain; border-radius: 8px;">
-            </div>
-            
-        </div>
-
-        <!-- Description -->
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 1.2rem; line-height: 1.8; margin: 0; color: #fff; font-weight: 500;">شركة رائدة في مجالات المقاولات والزراعة ومكافحة الآفات بخبرة تمتد لأكثر من 40 عاماً</p>
         </div>
     </div>
 
