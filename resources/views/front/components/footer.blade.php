@@ -6,11 +6,11 @@
         <div class="footer-col">
             <h4 class="footer-title">خبراتنا و خدماتنا</h4>
             <ul class="footer-links-list">
-                <li><a href="#">تصميم وتنفيذ أنظمة الري الحديثة</a></li>
-                <li><a href="#">توريد المعدات والأنظمة الزراعية</a></li>
-                <li><a href="#">الاستشارات الفنية والدعم التقني</a></li>
-                <li><a href="#">حلول إدارة المياه وتحسين كفاءة الري</a></li>
-                <li><a href="#">التشغيل والصيانة لأنظمة الري</a></li>
+                <li><a href="{{ route('home') }}#services">تصميم وتنفيذ أنظمة الري الحديثة</a></li>
+                <li><a href="{{ route('home') }}#services">توريد المعدات والأنظمة الزراعية</a></li>
+                <li><a href="{{ route('home') }}#services">الاستشارات الفنية والدعم التقني</a></li>
+                <li><a href="{{ route('home') }}#services">حلول إدارة المياه وتحسين كفاءة الري</a></li>
+                <li><a href="{{ route('home') }}#services">التشغيل والصيانة لأنظمة الري</a></li>
             </ul>
         </div>
 
@@ -18,12 +18,12 @@
         <div class="footer-col footer-col-center">
             <h4 class="footer-title">روابط مهمة</h4>
             <ul class="footer-links-list center-aligned">
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">من نحن</a></li>
-                <li><a href="#">خدماتنا</a></li>
-                <li><a href="#">منتجاتنا</a></li>
-                <li><a href="#">شركاء النجاح</a></li>
-                <li><a href="#">تواصل معنا</a></li>
+                <li><a href="{{ route('home') }}">الرئيسية</a></li>
+                <li><a href="{{ route('home') }}#about-details">من نحن</a></li>
+                <li><a href="{{ route('home') }}#services">خدماتنا</a></li>
+                <li><a href="{{ route('home') }}#products">منتجاتنا</a></li>
+                <li><a href="{{ route('home') }}#partners">شركاء النجاح</a></li>
+                <li><a href="{{ route('home') }}#contact">تواصل معنا</a></li>
             </ul>
         </div>
 

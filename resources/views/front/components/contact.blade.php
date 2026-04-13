@@ -96,6 +96,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
                 
                 if (data.success) {
+                    // WhatsApp Integration
+                    const name = formData.get('name');
+                    const userPhone = formData.get('phone');
+                    const email = formData.get('email');
+                    const userMsg = formData.get('message');
+
+                    const whatsappMsg = `🔔 *رسالة جديدة من الموقع*\n\n` +
+                                       `👤 *الاسم:* ${name}\n` +
+                                       `📞 *الهاتف:* ${userPhone}\n` +
+                                       `📧 *البريد:* ${email}\n\n` +
+                                       `✉️ *الرسالة:* \n${userMsg}`;
+
+                    const whatsappUrl = `https://wa.me/966598613005?text=${encodeURIComponent(whatsappMsg)}`;
+                    
+                    // Open WhatsApp in new tab
+                    window.open(whatsappUrl, '_blank');
+
                     // Show success message
                     successText.textContent = data.message;
                     successMessage.style.display = 'block';

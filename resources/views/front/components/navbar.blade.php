@@ -21,12 +21,12 @@
                 </ul>
             </div>
             <ul class="nav-menu">
-                <li><a href="#contact">تواصل معنا</a></li>
-                <li><a href="#partners">شركاء النجاح</a></li>
-                <li><a href="#products">منتجاتنا</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#about-details">من نحن</a></li>
-                <li class="active"><a href="{{ route('home') }}">الرئيسية</a></li>
+                <li><a href="{{ route('home') }}#contact">تواصل معنا</a></li>
+                <li><a href="{{ route('home') }}#partners">شركاء النجاح</a></li>
+                <li><a href="{{ route('home') }}#products">منتجاتنا</a></li>
+                <li><a href="{{ route('home') }}#services">خدماتنا</a></li>
+                <li><a href="{{ route('home') }}#about-details">من نحن</a></li>
+                <li class="{{ Request::routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">الرئيسية</a></li>
             </ul>
         </div>
 
